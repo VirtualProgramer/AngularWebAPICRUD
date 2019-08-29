@@ -1,7 +1,9 @@
 <br />
-<h1>APPPPPPPPP</h1>
+<h1>All Post List</h1>
 <ul>
   <li *ngFor="let post of posts">
-    {{post.postId}} - {{post.title}} - {{post.content}}
+    <a routerLink="/webapi/{{post.postId}}">
+      {{post.postId}} - {{post.title}} - {{post.content}}
+    </a>
   </li>
 </ul>
