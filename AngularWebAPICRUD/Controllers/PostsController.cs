@@ -32,6 +32,10 @@ namespace AngularWebAPICRUD.Controllers
         public async Task<ActionResult<Post>> GetPost(int id)
         {
             var post = await _context.Posts.FindAsync(id);
+            
+            //post.Blog = _context.Blogs
+            //    .Where(b => b.BlogId == post.BlogId)
+            //    .SingleOrDefault();
 
             if (post == null)
             {

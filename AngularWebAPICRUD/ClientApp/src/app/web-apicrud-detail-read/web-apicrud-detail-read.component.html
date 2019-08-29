@@ -1,0 +1,11 @@
+<div><span>id: </span>{{post.postId}}</div>
+<div><span>title:</span>{{post.title}}</div>
+<div><span>content: </span>{{post.content}}</div>
+
+<button routerLink="/webapi/{{post.postId}}/edit">
+  Edit
+</button>
+
+<button (click)="goDelete()">
+  Delete
+</button>

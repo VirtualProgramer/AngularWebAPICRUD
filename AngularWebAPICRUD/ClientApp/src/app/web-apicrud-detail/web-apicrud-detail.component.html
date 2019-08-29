@@ -1,13 +1,11 @@
 <br />
 <div *ngIf="post">
-
   <h2>{{post.title | uppercase}} Details</h2>
-  <div><span>id: </span>{{post.postId}}</div>
-  <div>
-    <label>
-      name:
-      <input [(ngModel)]="post.title" placeholder="name" />
-    </label>
-  </div>
-
+  <button (click)="goBack()">Go Back</button>
 </div>
+
+<br />
+<div *ngIf="editState == false">
+  <app-web-apicrud-detail-read [post]="post"></app-web-apicrud-detail-read>
+</div>
+

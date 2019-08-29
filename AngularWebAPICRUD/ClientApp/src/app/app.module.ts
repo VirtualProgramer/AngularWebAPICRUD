@@ -10,6 +10,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WebApicrudDetailComponent } from './web-apicrud-detail/web-apicrud-detail.component';
+import { WebApicrudDetailReadComponent } from './web-apicrud-detail-read/web-apicrud-detail-read.component';
+import { WebApicrudDetailEditComponent } from './web-apicrud-detail-edit/web-apicrud-detail-edit.component';
 // CRUD前置 //
 
 @NgModule({
@@ -17,7 +19,9 @@ import { WebApicrudDetailComponent } from './web-apicrud-detail/web-apicrud-deta
     AppComponent,
     WebAPICRUDComponent,
     WelcomeComponent,
-    WebApicrudDetailComponent
+    WebApicrudDetailComponent,
+    WebApicrudDetailReadComponent,
+    WebApicrudDetailEditComponent
   ],
   imports: [
     BrowserModule,
