@@ -1,0 +1,23 @@
+<br />
+
+<h2>Post Name：{{post.title | uppercase}}</h2>
+<button (click)="goBack()">Go Back</button>
+
+<div>
+  <label>
+    title:
+    <input [(ngModel)]="post.title" placeholder="title" />
+  </label>
+  <br />
+  <label>
+    content:
+    <input [(ngModel)]="post.content" placeholder="content" />
+  </label>
+  <br />
+  <label>
+    blogId:
+    <input [(ngModel)]="post.blogId" placeholder="blogId" />
+  </label>
+</div>
+
+<button (click)="goAdd()">Add</button>

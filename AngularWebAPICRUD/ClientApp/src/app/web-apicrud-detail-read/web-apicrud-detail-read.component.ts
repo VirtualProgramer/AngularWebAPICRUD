@@ -1,6 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WebApicrudDetailComponent } from '../web-apicrud-detail/web-apicrud-detail.component';
 import { Post, Blog } from '../postModel';
+import { ActivatedRoute } from '@angular/router';
+
+import { HeroService } from '../hero.service';
+import { DetailService } from '../detail.service';
 
 @Component({
   selector: 'app-web-apicrud-detail-read',
@@ -9,17 +13,27 @@ import { Post, Blog } from '../postModel';
 })
 export class WebApicrudDetailReadComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private detailService: DetailService,
+  ) { }
 
   @Input() post: Post;
 
-  goEdit():void {
-    window.alert(`這是編輯按鈕`);
+  goDelete(): void {
+    var r = window.confirm("確定刪除這筆資料？");
+    if (r) {
+      const id = +this.route.snapshot.paramMap.get('id');
+      this.heroService.deletePost(id)
+        .subscribe(hero => this.post = hero);
+      this.goBack();
+    }
   }
 
-  goDelete(): void {
-    window.alert(`這是刪除按鈕`);
-  }
+  goBack() {
+    this.detailService.goBack();
+  };
 
   ngOnInit() {
 

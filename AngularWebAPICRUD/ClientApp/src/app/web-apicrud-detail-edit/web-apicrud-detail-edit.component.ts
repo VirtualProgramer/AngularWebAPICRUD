@@ -16,9 +16,9 @@ export class WebApicrudDetailEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private location: Location,
     private heroService: HeroService,
     private detailService: DetailService,
-    private location: Location
   ) { }
 
   post: Post;

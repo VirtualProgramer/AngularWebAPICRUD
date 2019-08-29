@@ -9,18 +9,19 @@ import { Post } from '../postModel';
 })
 export class WebAPICRUDComponent implements OnInit {
 
+  posts: Post[];
+
   constructor(
     private heroService: HeroService
   ) { }
 
-  posts: Post[];
+  ngOnInit() {
+    this.getHeroes();
+  }
+
   getHeroes(): void {
     this.heroService.getPosts()
       .subscribe(heroes => this.posts = heroes);
-  }
-
-  ngOnInit() {
-    this.getHeroes();
   }
 
 }
